@@ -19,6 +19,7 @@ set foldlevelstart=999
 set foldmethod=indent
 set laststatus=2               " Always show status line.
 set noswapfile                 " No swapfiles.
+set number                     " Show line numbers.
 set path=.,,**                 " Search relative to current file.
 set shiftround                 " Round indentation to nearest multile of 'sw'
 set tags=./tags;,tags;         " Tags relative to current file + dir + parents recursively.
