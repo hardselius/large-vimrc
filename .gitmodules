@@ -34,3 +34,6 @@
 [submodule "pack/plugins/start/vim-terraform"]
 	path = pack/plugins/start/vim-terraform
 	url = git@github.com:hashivim/vim-terraform.git
+[submodule "pack/plugins/start/iceberg.vim"]
+	path = pack/plugins/start/iceberg.vim
+	url = git@github.com:cocopon/iceberg.vim.git
