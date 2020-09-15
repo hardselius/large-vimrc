@@ -113,5 +113,3 @@ nnoremap <Leader>ni :e $NOTES/index.md<CR>:cd $NOTES<CR>
 let g:terraform_fmt_on_save = 1
 let g:netrw_liststyle = 3
 let g:netrw_localrmdir='rm -r'
-let g:vimwiki_list = [{'path': '~/src/wiki/', 'syntax': 'markdown', 'ext': '.wiki'}]
-let g:vimwiki_ext2syntax = {'.wiki': 'markdown'}
