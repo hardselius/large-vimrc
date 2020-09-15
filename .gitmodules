@@ -37,3 +37,6 @@
 [submodule "pack/plugins/start/iceberg.vim"]
 	path = pack/plugins/start/iceberg.vim
 	url = git@github.com:cocopon/iceberg.vim.git
+[submodule "pack/plugins/start/vimwiki"]
+	path = pack/plugins/start/vimwiki
+	url = git@github.com:vimwiki/vimwiki.git
