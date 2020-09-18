@@ -36,7 +36,7 @@ endif
 
 augroup myvimrc
   autocmd!
-  " automatic loction/quickfix window
+  " automatic location/quickfix window
   autocmd QuickFixCmdPost [^l]* cwindow
   autocmd QuickFixCmdPost    l* lwindow
   autocmd VimEnter            * cwindow
