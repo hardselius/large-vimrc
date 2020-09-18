@@ -37,3 +37,6 @@
 [submodule "pack/plugins/start/iceberg.vim"]
 	path = pack/plugins/start/iceberg.vim
 	url = git@github.com:cocopon/iceberg.vim.git
+[submodule "pack/plugins/start/rust.vim"]
+	path = pack/plugins/start/rust.vim
+	url = git@github.com:rust-lang/rust.vim.git
