@@ -71,9 +71,11 @@ nnoremap ,i :ilist /
 nnoremap [I [I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
 nnoremap ]I ]I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
 
-" quickfix entries
+" location/quickfix entries
 nnoremap [q :cprevious<CR>
 nnoremap ]q :cnext<CR>
+nnoremap [l :lprevious<CR>
+nnoremap ]l :lnext<CR>
 
 " search and replace
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
