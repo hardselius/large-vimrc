@@ -26,7 +26,7 @@ set visualbell t_vb=              " No beep or flash
 set wildcharm=<C-z>               " Macro-compatible command-line wildchar.
 set wildmenu                      " Command-line completion.
 
-colorscheme jellybeans
+colorscheme srcery
 
 " use ripgrep if it's there
 if executable('rg')
