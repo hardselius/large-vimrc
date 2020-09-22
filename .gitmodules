@@ -40,3 +40,6 @@
 [submodule "pack/plugins/start/rust.vim"]
 	path = pack/plugins/start/rust.vim
 	url = git@github.com:rust-lang/rust.vim.git
+[submodule "pack/plugins/start/srcery-vim"]
+	path = pack/plugins/start/srcery-vim
+	url = git@github.com:srcery-colors/srcery-vim.git
