@@ -43,3 +43,6 @@
 [submodule "pack/plugins/start/srcery-vim"]
 	path = pack/plugins/start/srcery-vim
 	url = git@github.com:srcery-colors/srcery-vim.git
+[submodule "pack/plugins/start/ale"]
+	path = pack/plugins/start/ale
+	url = git@github.com:dense-analysis/ale.git
