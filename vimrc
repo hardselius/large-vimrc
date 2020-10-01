@@ -66,7 +66,10 @@ cnoremap <C-j> <Down>
 nnoremap ,j :tjump /
 nnoremap ,p :ptjump /
 
-" TODO: definitions
+" definitions
+nnoremap ,d :dlist /
+nnoremap [D [D:djump<Space><Space><Space><C-r><C-w><S-Left><Left>
+nnoremap ]D ]D:djump<Space><Space><Space><C-r><C-w><S-Left><Left>
 
 " matches
 nnoremap ,i :ilist /
