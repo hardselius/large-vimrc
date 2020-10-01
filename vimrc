@@ -5,26 +5,28 @@ syntax on
 runtime macros/matchit.vim
 
 " various settings
-set autoindent                    " Minimal automatic indent for any filetype.
-set autoread                      " Auto reread changed files without asking.
-set backspace=indent,eol,start    " Proper backspace behaviour.
-set clipboard^=unnamed            " System clipboard.
-set foldlevelstart=999            " Open all the folds.
-set foldmethod=indent             " Because it's cleaner.
-set grepprg=LC_ALL=C\ grep\ -nrsH " Improve default grep.
-set hidden                        " Prefer hiding over unloading buffers.
-set incsearch                     " Shows the match while typing.
-set laststatus=2                  " Always show status line.
-set noswapfile                    " No swapfiles.
-set number                        " Show line numbers.
-set path=.,,**                    " Search relative to current file.
-set ruler                         " Shows line,col at bottom right.
-set shiftround                    " Round indentation to nearest multile of 'sw'
-set tags=./tags;,tags;            " Tags relative to current file + dir + parents recursively.
-set virtualedit=block             " Allow virtual editing in Visual block mode.
-set visualbell t_vb=              " No beep or flash
-set wildcharm=<C-z>               " Macro-compatible command-line wildchar.
-set wildmenu                      " Command-line completion.
+set autoindent
+set autoread
+set backspace=indent,eol,start
+set clipboard^=unnamed
+set complete+=d
+set completeopt+=menuone,noinsert,noselect
+set foldlevelstart=999
+set foldmethod=indent
+set grepprg=LC_ALL=C\ grep\ -nrsH
+set hidden
+set incsearch
+set laststatus=2
+set noswapfile
+set number
+set path=.,,**
+set ruler
+set shiftround
+set tags=./tags;,tags;
+set virtualedit=block
+set visualbell t_vb=
+set wildcharm=<C-z>
+set wildmenu
 
 colorscheme srcery
 
@@ -94,7 +96,7 @@ endfunction
 
 command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<f-args>)
 command! -nargs=+ -complete=file_in_path -bar LGrep lgetexpr Grep(<f-args>)
-nnoremap ,G :Grep 
+nnoremap ,G :Grep
 
 cnoreabbrev <expr> grep  (getcmdtype() ==# ':' && getcmdline() ==# 'grep')  ? 'Grep'  : 'grep'
 cnoreabbrev <expr> lgrep (getcmdtype() ==# ':' && getcmdline() ==# 'lgrep') ? 'LGrep' : 'lgrep'
