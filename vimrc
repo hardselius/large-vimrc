@@ -43,6 +43,7 @@ augroup myvimrc
   autocmd QuickFixCmdPost    l* lwindow
   autocmd VimEnter            * cwindow
   autocmd FileType gitcommit nnoremap <buffer> { ?^@@<CR>|nnoremap <buffer> } /^@@<CR>|setlocal iskeyword+=-
+  autocmd CompleteDone * silent! pclose
 augroup END
 
 " files
