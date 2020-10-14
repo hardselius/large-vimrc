@@ -114,7 +114,7 @@ nnoremap ,r :Redir<Space>
 command! -range GB echo join(systemlist("git -C " . shellescape(expand('%:p:h')) . " blame -L <line1>,<line2> " . expand('%:t')), "\n")
 
 " various stuff
-let $MYWIKI="~/src/wiki/Home.md"
+let $MYWIKI='~/src/wiki/Home.md'
 nnoremap ,m :!mkdir -p %:h<CR>
 nnoremap <Leader>ni :e $NOTES/index.md<CR>:cd $NOTES<CR>
 
