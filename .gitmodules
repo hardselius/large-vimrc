@@ -4,9 +4,6 @@
 [submodule "pack/plugins/start/jellybeans.vim"]
 	path = pack/plugins/start/jellybeans.vim
 	url = git@github.com:nanotech/jellybeans.vim.git
-[submodule "pack/plugins/start/kotlin-vim"]
-	path = pack/plugins/start/kotlin-vim
-	url = git@github.com:udalov/kotlin-vim.git
 [submodule "pack/plugins/start/vim-commentary"]
 	path = pack/plugins/start/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
