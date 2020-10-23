@@ -119,6 +119,5 @@ nnoremap ,m :!mkdir -p %:h<CR>
 nnoremap <Leader>ni :e $NOTES/index.md<CR>:cd $NOTES<CR>
 
 " plugins
-let g:terraform_fmt_on_save = 1
 let g:netrw_liststyle = 3
 let g:netrw_localrmdir='rm -r'
