@@ -1,9 +1,9 @@
-" don't spam the user when Vim is started in Vi compatibility mode
-let s:cpo_save = &cpo
-set cpo&vim
+set shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab autoindent smartindent
 
+setlocal path=.,**,$GOPATH/src
+setlocal include=^\\s*import\\s*[\"']\\zs[^\"']*
+
+let g:ale_linters = {'go': ['gofmt', 'golint', 'govet', 'gopls']}
+setlocal omnifunc=ale#completion#OmniFunc
 compiler go
 
-" restore Vi compatibility settings
-let &cpo = s:cpo_save
-unlet s:cpo_save
