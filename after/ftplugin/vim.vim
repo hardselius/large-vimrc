@@ -1,5 +1,1 @@
-" Settings for vimscript
-set expandtab
-set foldmethod=marker
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=2 tabstop=2 softtabstop=2 expandtab autoindent smartindent
