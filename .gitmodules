@@ -43,3 +43,6 @@
 [submodule "pack/plugins/start/vim-graphql"]
 	path = pack/plugins/start/vim-graphql
 	url = git@github.com:jparise/vim-graphql.git
+[submodule "pack/plugins/start/plantuml-syntax"]
+	path = pack/plugins/start/plantuml-syntax
+	url = git@github.com:aklt/plantuml-syntax.git
