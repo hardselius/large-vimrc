@@ -137,6 +137,11 @@ nnoremap ,r :Redir<Space>
 " portable git blame
 command! -range GB echo join(systemlist("git -C " . shellescape(expand('%:p:h')) . " blame -L <line1>,<line2> " . expand('%:t')), "\n")
 
+" location list :global
+set errorformat^=%f:%l:%c\ %m
+command! -nargs=1 Global lgetexpr filter(map(getline(1,'$'), {key, val -> expand("%") . ":" . (key + 1) . ":1 " . val }), { idx, val -> val =~ <q-args> })
+nnoremap ,G :Global
+
 " create directories
 nnoremap ,m :!mkdir -p %:h<CR>
 
