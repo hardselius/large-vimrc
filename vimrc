@@ -87,6 +87,11 @@ nnoremap ]l :lnext<CR>
 nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
+" pair expansion
+inoremap (<CR> (<CR>)<Esc>O
+inoremap [<CR> [<CR>]<Esc>O
+inoremap {<CR> {<CR>}<Esc>O
+
 " global commands
 nnoremap ,g :g//#<Left><Left>
 
