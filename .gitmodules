@@ -40,6 +40,3 @@
 [submodule "pack/plugins/start/plantuml-syntax"]
 	path = pack/plugins/start/plantuml-syntax
 	url = git@github.com:aklt/plantuml-syntax.git
-[submodule "pack/plugins/start/badwolf"]
-	path = pack/plugins/start/badwolf
-	url = git@github.com:sjl/badwolf.git
