@@ -19,9 +19,6 @@
 [submodule "pack/plugins/start/snipmate.vim"]
 	path = pack/plugins/start/snipmate.vim
 	url = git@github.com:hardselius/snipmate.vim.git
-[submodule "pack/plugins/start/tagbar"]
-	path = pack/plugins/start/tagbar
-	url = git@github.com:preservim/tagbar.git
 [submodule "pack/plugins/start/vim-terraform"]
 	path = pack/plugins/start/vim-terraform
 	url = git@github.com:hashivim/vim-terraform.git
