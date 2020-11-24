@@ -1,6 +1,3 @@
-[submodule "pack/plugins/start/editorconfig-vim"]
-	path = pack/plugins/start/editorconfig-vim
-	url = git@github.com:editorconfig/editorconfig-vim.git
 [submodule "pack/plugins/start/jellybeans.vim"]
 	path = pack/plugins/start/jellybeans.vim
 	url = git@github.com:nanotech/jellybeans.vim.git
