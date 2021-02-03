@@ -28,3 +28,6 @@
 [submodule "pack/plugins/start/plantuml-syntax"]
 	path = pack/plugins/start/plantuml-syntax
 	url = git@github.com:aklt/plantuml-syntax.git
+[submodule "pack/plugins/start/vim-lsc"]
+	path = pack/plugins/start/vim-lsc
+	url = git@github.com:natebosch/vim-lsc.git
