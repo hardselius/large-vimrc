@@ -32,8 +32,8 @@ colorscheme dim
 
 " use ripgrep if it's there
 if executable('rg')
-  set grepformat=%f:%l:%c:%m,%f:%l:%m
-  set grepprg=rg\ --vimgrep\ --no-heading\ --hidden\ $*  " Use ripgrep
+  set grepformat=%f:%l:%c:%m
+  set grepprg=rg\ --vimgrep\ --no-heading\ $*
 endif
 
 augroup myvimrc
