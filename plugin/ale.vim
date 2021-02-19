@@ -10,9 +10,13 @@ let g:ale_linters = {
       \}
 
 let g:ale_fixers = {
-      \ 'go': ['goimports'],
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'go': ['goimports', 'gofmt'],
+      \ 'json': ['prettier'],
+      \ 'markdown': ['prettier'],
       \ 'nix': ['nixpkgs-fmt'],
       \ 'rust': ['rustfmt'],
+      \ 'sh': ['shfmt'],
       \ 'terraform': ['terraform'],
       \}
 
