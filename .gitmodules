@@ -28,3 +28,6 @@
 [submodule "pack/plugins/start/vim-lsc"]
 	path = pack/plugins/start/vim-lsc
 	url = git@github.com:natebosch/vim-lsc.git
+[submodule "pack/plugins/start/vim-dim"]
+	path = pack/plugins/start/vim-dim
+	url = git@github.com:jeffkreeftmeijer/vim-dim.git
