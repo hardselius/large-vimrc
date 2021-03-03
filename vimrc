@@ -28,7 +28,7 @@ set visualbell t_vb=
 set wildcharm=<C-z>
 set wildmenu
 
-colorscheme dim
+colorscheme grim
 
 " use ripgrep if it's there
 if executable('rg')
