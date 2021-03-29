@@ -1,33 +1,33 @@
 [submodule "pack/plugins/start/vim-commentary"]
 	path = pack/plugins/start/vim-commentary
-	url = git@github.com:tpope/vim-commentary.git
+	url = https://github.com/tpope/vim-commentary.git
 [submodule "pack/plugins/start/vim-repeat"]
 	path = pack/plugins/start/vim-repeat
-	url = git@github.com:tpope/vim-repeat.git
+	url = https://github.com/tpope/vim-repeat.git
 [submodule "pack/plugins/start/vim-surround"]
 	path = pack/plugins/start/vim-surround
-	url = git@github.com:tpope/vim-surround.git
+	url = https://github.com/tpope/vim-surround.git
 [submodule "pack/plugins/start/tabular"]
 	path = pack/plugins/start/tabular
-	url = git@github.com:godlygeek/tabular.git
+	url = https://github.com/godlygeek/tabular.git
 [submodule "pack/plugins/start/vim-nix"]
 	path = pack/plugins/start/vim-nix
-	url = git@github.com:LnL7/vim-nix.git
+	url = https://github.com/LnL7/vim-nix.git
 [submodule "pack/plugins/start/vim-terraform"]
 	path = pack/plugins/start/vim-terraform
-	url = git@github.com:hashivim/vim-terraform.git
+	url = https://github.com/hashivim/vim-terraform.git
 [submodule "pack/plugins/start/rust.vim"]
 	path = pack/plugins/start/rust.vim
-	url = git@github.com:rust-lang/rust.vim.git
+	url = https://github.com/rust-lang/rust.vim.git
 [submodule "pack/plugins/start/ale"]
 	path = pack/plugins/start/ale
-	url = git@github.com:dense-analysis/ale.git
+	url = https://github.com/dense-analysis/ale.git
 [submodule "pack/plugins/start/plantuml-syntax"]
 	path = pack/plugins/start/plantuml-syntax
-	url = git@github.com:aklt/plantuml-syntax.git
+	url = https://github.com/aklt/plantuml-syntax.git
 [submodule "pack/plugins/start/vim-lsc"]
 	path = pack/plugins/start/vim-lsc
-	url = git@github.com:natebosch/vim-lsc.git
+	url = https://github.com/natebosch/vim-lsc.git
 [submodule "pack/plugins/start/vim-dim"]
 	path = pack/plugins/start/vim-dim
-	url = git@github.com:jeffkreeftmeijer/vim-dim.git
+	url = https://github.com/jeffkreeftmeijer/vim-dim.git
