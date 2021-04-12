@@ -31,3 +31,6 @@
 [submodule "pack/plugins/start/vim-dim"]
 	path = pack/plugins/start/vim-dim
 	url = https://github.com/jeffkreeftmeijer/vim-dim.git
+[submodule "pack/plugins/start/dhall-vim"]
+	path = pack/plugins/start/dhall-vim
+	url = https://github.com/vmchale/dhall-vim.git
