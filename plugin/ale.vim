@@ -28,7 +28,7 @@ let g:ale_go_golangci_lint_options = ''
 let g:ale_go_golangci_lint_package = 1
 
 " Rust configuration
-let g:ale_rust_analyzer_executable = 'rust-analyzer-logged.sh'
+let g:ale_rust_rustfmt_options = '--edition 2018'
 let g:ale_rust_analyzer_config = {
       \ 'diagnostics': { 'disabled': ['unresolved-import'] },
       \ 'cargo': { 'loadOutDirsFromCheck': v:true },
