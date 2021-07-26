@@ -152,3 +152,6 @@ nnoremap ,m :!mkdir -p %:h<CR>
 " plugins
 let g:netrw_liststyle = 3
 let g:netrw_localrmdir='rm -r'
+
+runtime! vimrc.d/*.vim
+autocmd VimEnter * ++once runtime! after/vimrc.d/*.vim
