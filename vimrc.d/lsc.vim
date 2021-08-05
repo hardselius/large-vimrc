@@ -1,60 +1,106 @@
+" servers
+
+let s:servers = {}
+
+let s:servers["Bash Language Server"] = #{
+      \   cmd: [ "bash-language-server", "start" ],
+      \   ft: [ "sh" ],
+      \ }
+
+let s:servers["gopls"] = #{
+      \   cmd: [ "gopls", "serve" ],
+      \   log_level: -1,
+      \   ft: [ "go" ],
+      \ }
+
+let s:servers["rnix-lsp"] = #{
+      \   cmd: [ "rnix-lsp" ],
+      \   ft: [ "nix" ],
+      \ }
+
+let s:servers["rust-analyzer"] = #{
+      \   cmd: [ "rust-analyzer" ],
+      \   ft: [ "rust" ]
+      \ }
+
+let s:servers["Terraform Language Server"] = #{
+      \   cmd: [ "terraform-ls", "serve" ],
+      \   ft: [ "terraform" ]
+      \ }
+
+let s:servers["VimScript Langugage Server"] = #{
+      \   cmd: [ 'vim-language-server', "--stdio" ],
+      \   init: #{
+      \     options: #{
+      \       vimruntime: $VIMRUNTIME,
+      \       runtimepath: &runtimepath,
+      \     }
+      \   },
+      \   ft: [ "vim" ],
+      \ }
+
+" helpers
+
+function! s:register() abort
+  for [ name, serv ] in items(s:servers)
+    if executable(serv.cmd[0])
+      call s:reg(name, serv)
+    endif
+  endfor
+endfunction
+
+" vim-lsc
+
 let g:lsc_enable_autocomplete = v:false
 let g:lsc_auto_map = {
-      \ 'defaults': v:true,
-      \ 'Completion': 'omnifunc',
-      \ 'ShowHover': 'gK',
-      \ 'NextReference': '<Leader><C-n>',
-      \ 'PreviousReference': '<Leader><C-p>',
-      \}
+      \   "defaults": v:true,
+      \   "Completion": "omnifunc",
+      \   "ShowHover": "gK",
+      \   "NextReference": "<Leader><C-n>",
+      \   "PreviousReference": "<Leader><C-p>",
+      \ }
 
-hi! link lscDiagnosticWarning WarningMsg
+function! s:lsc_register() abort
+  function! s:reg(name, svr) abort
+    let server = {}
+    let server.name = a:name
+    let server.command = join(a:svr.cmd, " ")
 
-" Servers
-let s:srvs = {}
+    if has_key(a:svr, "init")
+      let server.message_hooks = {}
+      let server.message_hooks.initialize = {}
 
-if executable('bash-language-server')
-  let s:srvs['sh'] = 'bash-language-server start'
-endif
+      if has_key(a:svr.init, "root")
+        let server.message_hooks.initialize.rootUri = a:svr.init.root.lsc
+      endif
 
-if executable('gopls')
-  let s:srvs['go'] = 'gopls'
-endif
+      if has_key(a:svr.init, "options")
+        let server.message_hooks.initialize.initializationOptions = a:svr.init.options
+      endif
+    endif
 
-if executable('rnix-lsp')
-  let s:srvs['go'] = 'rnix-lsp'
-endif
+    if has_key(a:svr, "workspace")
+      let server.workspace_config = a:svr.workspace
+    endif
 
-if executable('rust-analyzer')
-  let s:srvs['rust'] = 'rust-analyzer'
-endif
+    if has_key(a:svr, "log_level")
+      let server.log_level = a:svr.log_level
+    endif
 
-if executable('terraform-ls')
-  let s:srvs['terraform'] = 'terraform-ls serve'
-endif
+    let server.suppress_stderr = v:true
 
-if executable('vim-language-server')
-  let s:vimls = {
-        \ 'name': 'vim-language-server',
-        \ 'command': 'vim-language-server --stdio',
-        \ 'message_hooks': {
-        \   'initialize': {
-        \     'initializationOptions': {
-        \       'vimruntime': $VIMRUNTIME,
-        \       'runtimepath': &runtimepath
-        \     },
-        \   },
-        \ },
-        \}
-  let s:srvs['vim'] = s:vimls
-endif
+    for ft in a:svr.ft
+      let g:lsc_server_commands[ft] = server
+    endfor
+  endfunction
 
+  let g:lsc_server_commands = {}
+  call s:register()
+endfunction
 
-call map(s:srvs, {_,val -> type(val) == v:t_string ? { "command": val } : val})
-call map(s:srvs, {_,val -> extend(val, {"suppress_stderr": v:true})})
+call s:lsc_register()
 
-let g:lsc_server_commands = s:srvs
-
-function! s:init() abort
+function! s:lsc_init() abort
   if !get(g:, 'loaded_lsc', 0) | return | endif
 
   nnoremap <buffer> <F2> :LSClientAllDiagnostics<CR>
@@ -64,11 +110,21 @@ function! s:init() abort
         \|   exec 'LSClientAllDiagnostics' | q
         \| endif
 
-  autocmd VimLeavePre <buffer> call lsc#server#disable() | delfunction lsc#server#exit
+  " autocmd VimLeavePre <buffer> call lsc#server#disable() | delfunction lsc#server#exit
 
+endfunction
+
+function! s:lsc_highlight() abort
+  highlight link lscDiagnosticError Error
+  highlight link lscDiagnosticWarning SpellBad
+  highlight link lscDiagnosticInfo SpellCap
+  highlight link lscDiagnosticHint SpellCap
+  highlight link lscReference CursorColumn
+  highlight link lscCurrentParameter CursorColumn
 endfunction
 
 augroup LSC_
   autocmd!
-  exec 'autocmd FileType ' . join(keys(s:srvs), ',') . ' call s:init()'
+  exec "autocmd FileType " . join(keys(g:lsc_server_commands), ",") . " call s:lsc_init()"
+  autocmd ColorScheme * call s:lsc_highlight()
 augroup END
