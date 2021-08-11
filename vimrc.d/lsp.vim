@@ -23,6 +23,11 @@ let s:servers["rust-analyzer"] = #{
       \   ft: [ "rust" ]
       \ }
 
+let s:servers["TypeScript Language Server"] = #{
+      \   cmd: [ "typescript-langugage-server", "--stdio" ],
+      \   ft: [ "javascript", "typescript" ],
+      \ }
+
 let s:servers["Terraform Language Server"] = #{
       \   cmd: [ "terraform-ls", "serve" ],
       \   ft: [ "terraform" ]
