@@ -6,4 +6,4 @@ for d in globpath(&runtimepath, 'spell', 1, 1)
   endfor
 endfo
 
-
+command! -nargs=? -bang Spelling setlocal spell<bang> spelllang=<args>
