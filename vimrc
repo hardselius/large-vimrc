@@ -1,3 +1,14 @@
+" backup, undo and swap with XDG support
+if empty($XDG_CACHE_HOME) | let $XDG_CACHE_HOME = $HOME."/.cache" | endif
+
+set backupdir=$XDG_CACHE_HOME/vim/backup | call mkdir(&backupdir, 'p', 0700)
+set directory=$XDG_CACHE_HOME/vim/swap   | call mkdir(&directory, 'p', 0700)
+set undodir=$XDG_CACHE_HOME/vim/undo     | call mkdir(&undodir,   'p', 0700)
+
+set backup
+set undofile
+set swapfile
+
 " filetype support
 filetype plugin indent on
 syntax on
@@ -17,7 +28,6 @@ set grepprg=LC_ALL=C\ grep\ -nrsH
 set hidden
 set incsearch
 set laststatus=2
-set noswapfile
 set number
 set path=.,,**
 set ruler
