@@ -62,6 +62,7 @@ endfunction
 " vim-lsc
 
 let g:lsc_enable_autocomplete = v:false
+let g:lsc_hover_popup = v:false
 let g:lsc_reference_highlights = v:false
 let g:lsc_auto_map = {
       \   "defaults": v:true,
