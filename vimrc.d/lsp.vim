@@ -7,6 +7,11 @@ let s:servers["Bash Language Server"] = #{
       \   ft: [ "sh" ],
       \ }
 
+let s:servers["Dhall Language Server"] = #{
+      \   cmd: [ "dhall-lsp-server" ],
+      \   ft: [ "dhall" ],
+      \ }
+
 let s:servers["gopls"] = #{
       \   cmd: [ "gopls", "serve" ],
       \   log_level: -1,
