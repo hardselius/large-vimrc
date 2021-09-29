@@ -29,7 +29,8 @@ let s:servers["rust-analyzer"] = #{
       \ }
 
 let s:servers["TypeScript Language Server"] = #{
-      \   cmd: [ "typescript-langugage-server", "--stdio" ],
+      \   cmd: [ "typescript-language-server", "--stdio" ],
+      \   log_level: -1,
       \   ft: [ "javascript", "typescript" ],
       \ }
 
