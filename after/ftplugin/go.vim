@@ -1,4 +1,8 @@
-set shiftwidth=4 tabstop=4 softtabstop=4 noexpandtab autoindent smartindent
+set shiftwidth=4
+let &softtabstop = &shiftwidth
+set noexpandtab
+set autoindent
+set smartindent
 
 setlocal path=.,**,$GOPATH/src
 setlocal include=^\\s*import\\s*[\"']\\zs[^\"']*
