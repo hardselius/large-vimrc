@@ -1,3 +1,8 @@
+if exists('g:loaded_lsp_config')
+  finish
+endif
+let g:loaded_lsp_config= 1
+
 " servers
 
 let s:servers = {}
@@ -122,9 +127,6 @@ function! s:lsc_init() abort
         \  if empty(filter(getqflist(), 'v:val.valid'))
         \|   exec 'LSClientAllDiagnostics' | q
         \| endif
-
-  " autocmd VimLeavePre <buffer> call lsc#server#disable() | delfunction lsc#server#exit
-
 endfunction
 
 function! s:lsc_highlight() abort
