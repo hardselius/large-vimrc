@@ -54,6 +54,8 @@ augroup myvimrc
   autocmd VimEnter            * cwindow
   autocmd FileType gitcommit nnoremap <buffer> { ?^@@<CR>|nnoremap <buffer> } /^@@<CR>|setlocal iskeyword+=-
   autocmd CompleteDone * silent! pclose
+  " undo if filter shell command returned an error
+  autocmd ShellFilterPost * if v:shell_error | undo | endif
 augroup END
 
 " files
