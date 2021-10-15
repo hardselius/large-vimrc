@@ -1,6 +1,6 @@
+set shiftwidth=2
+let &softtabstop = &shiftwidth
 set expandtab
-set shiftwidth=4
-set softtabstop=4
 
 if executable('sqlformat')
   let &l:formatprg='sqlformat -k upper -r --indent_width ' . &l:shiftwidth . ' -'
