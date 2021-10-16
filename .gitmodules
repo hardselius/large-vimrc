@@ -28,15 +28,9 @@
 [submodule "pack/plugins/start/vim-dim"]
 	path = pack/plugins/start/vim-dim
 	url = https://github.com/jeffkreeftmeijer/vim-dim.git
-[submodule "pack/plugins/start/dhall-vim"]
-	path = pack/plugins/start/dhall-vim
-	url = https://github.com/vmchale/dhall-vim.git
 [submodule "pack/plugins/start/vim-toml"]
 	path = pack/plugins/start/vim-toml
 	url = https://github.com/cespare/vim-toml.git
 [submodule "pack/plugins/start/tagbar"]
 	path = pack/plugins/start/tagbar
 	url = https://github.com/preservim/tagbar.git
-[submodule "pack/plugins/start/zig.vim"]
-	path = pack/plugins/start/zig.vim
-	url = https://github.com/ziglang/zig.vim.git
