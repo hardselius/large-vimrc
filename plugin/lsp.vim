@@ -11,8 +11,8 @@ let s:servers = {
       \   },
       \   "gopls": #{
       \     command: "gopls serve",
-      \     log_level: -1,
       \     ft: [ "go" ],
+      \     log_level: -1,
       \   },
       \   "rnix-lsp": #{
       \     command: "rnix-lsp",
@@ -20,11 +20,15 @@ let s:servers = {
       \   },
       \   "rust-analyzer": #{
       \     command: "rust-analyzer",
+      \     ft: [ "rust" ],
       \     message_hooks: #{
       \       initialize: #{
       \         initializationOptions: #{
       \           cargo: #{
       \             loadOutDirsFromCheck: v:true
+      \           },
+      \           checkOnSave: #{
+      \             command: "clippy"
       \           },
       \           procMacro: #{
       \             enable: v:true
@@ -32,12 +36,11 @@ let s:servers = {
       \         },
       \       },
       \     },
-      \     ft: [ "rust" ],
       \   },
       \   "TypeScript Language Server": #{
       \     command: "typescript-language-server --stdio",
-      \     log_level: -1,
       \     ft: [ "javascript", "typescript" ],
+      \     log_level: -1,
       \   },
       \   "Terraform Language Server": #{
       \     command: "terraform-ls serve",
@@ -45,6 +48,7 @@ let s:servers = {
       \   },
       \   "VimScript Language Server": #{
       \     command: "vim-language-server --stdio",
+      \     ft: [ "vim" ],
       \     message_hooks: #{
       \       initialize: #{
       \         initializationOptions: #{
@@ -53,7 +57,6 @@ let s:servers = {
       \         },
       \       },
       \     },
-      \     ft: [ "vim" ],
       \   },
       \ }
 
