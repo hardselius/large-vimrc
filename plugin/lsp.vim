@@ -5,6 +5,19 @@ let g:loaded_lsp_config= 1
 
 let g:lsc_server_commands = {}
 let s:servers = {
+      \   "ccls": #{
+      \     command: "ccls",
+      \     message_hooks: #{
+      \       initialize: #{
+      \         rootUri: {m, p -> lsc#uri#documentUri(fnamemodify(findfile("compile_commands.json", expand("%:p") . ";"), ":p:h"))},
+      \         initializationOptions: #{
+      \           cache: #{ directory: "/tmp/ccls/cache" },
+      \           clang: #{ extraArgs: ["--gcc-toolchain=/usr"] },
+      \         },
+      \       },
+      \     },
+      \     ft: [ "c", "cpp", "objc", "objcpp" ],
+      \   },
       \   "Bash Language Server": #{
       \     command: "bash-language-server start",
       \     ft: [ "sh" ],
