@@ -18,7 +18,7 @@ let s:servers = {
       \     },
       \     ft: [ "c", "cpp", "objc", "objcpp" ],
       \   },
-      \   "Bash Language Server": #{
+      \   "bash-language-server": #{
       \     command: "bash-language-server start",
       \     ft: [ "sh" ],
       \   },
@@ -50,16 +50,16 @@ let s:servers = {
       \       },
       \     },
       \   },
-      \   "TypeScript Language Server": #{
+      \   "typescript-language-server": #{
       \     command: "typescript-language-server --stdio",
       \     ft: [ "javascript", "typescript" ],
       \     log_level: -1,
       \   },
-      \   "Terraform Language Server": #{
+      \   "terraform-ls": #{
       \     command: "terraform-ls serve",
       \     ft: [ "terraform" ],
       \   },
-      \   "VimScript Language Server": #{
+      \   "vim-language-server": #{
       \     command: "vim-language-server --stdio",
       \     ft: [ "vim" ],
       \     message_hooks: #{
