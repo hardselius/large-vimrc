@@ -139,10 +139,11 @@ function! s:CCR()
   else | return "\<CR>" | endif
 endfunction
 
-" misc
-
 " scratch buffer
 command! SC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
+
+" sudo write
+command! SudoW exec 'silent! write !sudo tee % >/dev/null' | edit!
 
 " portable git blame
 command! -range GB echo join(systemlist("git -C " . shellescape(expand('%:p:h')) . " blame -L <line1>,<line2> " . expand('%:t')), "\n")
