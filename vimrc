@@ -143,8 +143,6 @@ endfunction
 
 " scratch buffer
 command! SC vnew | setlocal nobuflisted buftype=nofile bufhidden=wipe noswapfile
-command! -nargs=1 -complete=command -bar -range Redir silent call redir#Redir(<q-args>, <range>, <line1>, <line2>)
-nnoremap ,r :Redir<Space>
 
 " portable git blame
 command! -range GB echo join(systemlist("git -C " . shellescape(expand('%:p:h')) . " blame -L <line1>,<line2> " . expand('%:t')), "\n")

@@ -1,4 +1,9 @@
-function! redir#Redir(cmd, rng, start, end)
+if exists("g:loaded_redir")
+  finish
+endif
+let g:loaded_redir = 1
+
+function! s:redir(cmd, rng, start, end)
   for win in range(1, winnr('$'))
     if getwinvar(win, 'scratch')
       execute win . 'windo close'
@@ -27,3 +32,4 @@ function! redir#Redir(cmd, rng, start, end)
   call setline(1, output)
 endfunction
 
+command! -nargs=1 -complete=command -bar -range Redir silent call s:redir(<q-args>, <range>, <line1>, <line2>)
