@@ -30,4 +30,4 @@ function! s:preserve(cmd)
   call setpos('.', cursor_position)
 endfunction
 
-command! -nargs=1 -complete=shellcmd Preserve silent call s:preserve('silent %!' . <q-args>)
+command! -nargs=1 -complete=shellcmd Filter silent call s:preserve('silent %!' . <q-args>)
