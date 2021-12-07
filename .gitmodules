@@ -34,3 +34,9 @@
 [submodule "pack/plugins/start/vim-jsonnet"]
 	path = pack/plugins/start/vim-jsonnet
 	url = https://github.com/google/vim-jsonnet.git
+[submodule "pack/plugins/start/monosvkem"]
+	path = pack/plugins/start/monosvkem
+	url = https://github.com/neutaaaaan/monosvkem.git
+[submodule "pack/plugins/start/iosvkem"]
+	path = pack/plugins/start/iosvkem
+	url = https://github.com/neutaaaaan/iosvkem.git
