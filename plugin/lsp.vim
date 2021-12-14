@@ -71,6 +71,10 @@ let s:servers = {
       \       },
       \     },
       \   },
+      \   "jsonnet-language-server": #{
+      \     command: "jsonnet-language-server",
+      \     ft: [ "jsonnet" ],
+      \   },
       \ }
 
 for [ s:name, s:serv ] in items(s:servers)
