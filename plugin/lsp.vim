@@ -89,7 +89,7 @@ for [ s:name, s:serv ] in items(s:servers)
 endfor | unlet s:name s:serv s:servers
 
 let g:lsc_enable_autocomplete = v:false
-let g:lsc_hover_popup = v:false
+" let g:lsc_hover_popup = v:false
 let g:lsc_reference_highlights = v:false
 let g:lsc_auto_map = {
       \   "defaults": v:true,
