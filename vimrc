@@ -59,34 +59,32 @@ augroup myvimrc
 augroup END
 
 " files
-nnoremap ,f :find *
-nnoremap ,s :sfind *
-nnoremap ,v :vertical sfind *
-nnoremap ,t :tabfind *
+nnoremap <Leader>f :find *
+nnoremap <Leader>s :sfind *
+nnoremap <Leader>v :vertical sfind *
+nnoremap <Leader>t :tabfind *
 
 " buffers
-nnoremap ,b :buffer *
-nnoremap ,B :sbuffer *
-nnoremap [b :bprevious<CR>
-nnoremap ]b :bnext<CR>
-nnoremap ,a :buffer#<CR>
+nnoremap <Leader>b :buffer *
+nnoremap <Leader>b :sbuffer *
+nnoremap <Leader>a :buffer#<CR>
 
 " command-line
 cnoremap <C-k> <Up>
 cnoremap <C-j> <Down>
 
 " tags
-nnoremap ,j :tjump /
-nnoremap ,p :ptjump /
+nnoremap <Leader>j :tjump /
+nnoremap <Leader>p :ptjump /
 
 " definitions
-nnoremap ,d :dlist /
+nnoremap <Leader>d :dlist /
 nnoremap [D [D:djump<Space><Space><Space><C-r><C-w><S-Left><Left>
 nnoremap ]D ]D:djump<Space><Space><Space><C-r><C-w><S-Left><Left>
 
 " matches
-nnoremap ,i :ilist /
-nnoremap [I [I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
+nnoremap <Leader>i :ilist /
+nnoremap [I [I:ijump<Space><Space><Space><C-r><C-w><s-left><Left><Left>
 nnoremap ]I ]I:ijump<Space><Space><Space><C-r><C-w><S-Left><Left><Left>
 
 " location/quickfix entries
@@ -100,7 +98,7 @@ nnoremap <Space><Space> :'{,'}s/\<<C-r>=expand("<cword>")<CR>\>/
 nnoremap <Space>%       :%s/\<<C-r>=expand("<cword>")<CR>\>/
 
 " global commands
-nnoremap ,g :g//#<Left><Left>
+nnoremap <Leader>g :g//#<Left><Left>
 
 " windows
 nnoremap <silent> <C-w>z :wincmd z<Bar>cclose<Bar>lclose<CR>
@@ -151,10 +149,10 @@ command! -range GB echo join(systemlist("git -C " . shellescape(expand('%:p:h'))
 " location list :global
 set errorformat^=%f:%l:%c\ %m
 command! -nargs=1 Global lgetexpr filter(map(getline(1,'$'), {key, val -> expand("%") . ":" . (key + 1) . ":1 " . val }), { idx, val -> val =~ <q-args> })
-nnoremap ,G :Global
+nnoremap <Leader>G :Global
 
 " create directories
-nnoremap ,m :!mkdir -p %:h<CR>
+nnoremap <Leader>m :!mkdir -p %:h<CR>
 
 " plugins
 let g:netrw_liststyle = 3
