@@ -40,6 +40,3 @@
 [submodule "pack/plugins/start/iosvkem"]
 	path = pack/plugins/start/iosvkem
 	url = https://github.com/neutaaaaan/iosvkem.git
-[submodule "pack/plugins/start/vim-colortemplate"]
-	path = pack/plugins/start/vim-colortemplate
-	url = https://github.com/lifepillar/vim-colortemplate.git
