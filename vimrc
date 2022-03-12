@@ -156,5 +156,3 @@ nnoremap <Leader>m :!mkdir -p %:h<CR>
 " plugins
 let g:netrw_liststyle = 3
 let g:netrw_localrmdir='rm -r'
-
-let g:loaded_lsc_config=1

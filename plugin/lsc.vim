@@ -1,7 +1,7 @@
-if exists('g:loaded_lsc_config')
+if exists('g:loaded_my_lsc_config')
   finish
 endif
-let g:loaded_lsc_config=1
+let g:loaded_my_lsc_config=1
 
 let g:lsc_server_commands = {}
 let s:servers = {
