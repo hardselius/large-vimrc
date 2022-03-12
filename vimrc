@@ -66,7 +66,6 @@ nnoremap <Leader>t :tabfind *
 
 " buffers
 nnoremap <Leader>b :buffer *
-nnoremap <Leader>b :sbuffer *
 nnoremap <Leader>a :buffer#<CR>
 
 " command-line
