@@ -102,6 +102,9 @@ nnoremap <Leader>g :g//#<Left><Left>
 " windows
 nnoremap <silent> <C-w>z :wincmd z<Bar>cclose<Bar>lclose<CR>
 
+" background
+nnoremap [b :<C-U>set background=<C-R>=&background == "dark" ? "light" : "dark"<CR><CR>
+
 " grepping
 function! Grep(...)
   return system(join([&grepprg] + [expandcmd(join(a:000, ' '))], ' '))
