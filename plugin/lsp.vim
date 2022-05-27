@@ -1,6 +1,6 @@
 if (exists('g:loaded_my_lsp_config') && g:loaded_my_lsp_config)
-   finish
- endif
+  finish
+endif
 let g:loaded_my_lsp_config=1
 
 " ALE
@@ -16,14 +16,14 @@ hi! link ALEWarning WarningMsg
 nnoremap <F2> :ALEToggle<CR>
 
 augroup LSP_ALE
-    autocmd!
-    autocmd User lsp_buffer_enabled
-          \  call lsp#ale#enable()
-          \| let b:ale_linters = get(b:, "ale_linters", []) + [ 'vim-lsp' ]
-          \| ALELint
+  autocmd!
+  autocmd User lsp_buffer_enabled
+        \  call lsp#ale#enable()
+        \| let b:ale_linters = get(b:, "ale_linters", []) + [ 'vim-lsp' ]
+        \| ALELint
 
-    let g:lsp_ale_diagnostics_severity = 'information'
-    let g:lsp_ale_auto_enable_linter   = 0
+  let g:lsp_ale_diagnostics_severity = 'information'
+  let g:lsp_ale_auto_enable_linter   = 0
 augroup END
 
 " vim-lsp
@@ -56,25 +56,6 @@ function! s:lsp_init() abort
   inoremap <buffer> <expr><C-f> lsp#scroll(+4)
   inoremap <buffer> <expr><C-d> lsp#scroll(-4)
 endfunction
-
-let g:lsp_settings = {
-      \  'rust-analyzer': #{
-      \    initialization_options: #{
-      \      completion: #{
-      \        autoimport: #{ enable: v:true },
-      \      },
-      \      cargo: #{
-      \        loadOutDirsFromCheck: v:true
-      \      },
-      \      checkOnSave: #{
-      \        command: "clippy"
-      \      },
-      \      procMacro: #{
-      \        enable: v:true
-      \      },
-      \    },
-      \  },
-      \}
 
 augroup LSP
   autocmd!
